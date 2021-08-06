@@ -60,58 +60,83 @@ function TradingCard(props) {
   );
 }
 
-ReactDOM.render(
-  (
-    <TradingCard
-      name="Balloonicorn"
-      skill="video games"
-      imgUrl="/static/img/balloonicorn.jpg"
-    />
-  ),
-  document.querySelector('#balloonicorn')
+function TradingCardContainer() {
+  const tradingCards = [];
+
+  for (const currentCard of tradingCardData) {
+    tradingCards.push(
+      <TradingCard
+        name={currentCard.name}
+        skill={currentCard.skill}
+        imgUrl={currentCard.imgUrl}
+      />
+    );
+  }
+
+  return (
+    <React.Fragment>
+      {tradingCards}
+    </React.Fragment>
+  );
+
+}
+
+ReactDOM.render( 
+    <TradingCardContainer />, document.querySelector('#container') 
 );
 
-ReactDOM.render(
-  (
-    <TradingCard
-      name="Float"
-      skill="baking pretzels"
-      imgUrl="/static/img/float.jpg"
-    />
-  ),
-  document.querySelector('#float')
-);
+// ReactDOM.render(
+//   (
+//     <TradingCard
+//       name="Balloonicorn"
+//       skill="video games"
+//       imgUrl="/static/img/balloonicorn.jpg"
+//     />
+//   ),
+//   document.querySelector('#balloonicorn')
+// );
 
-ReactDOM.render(
-  (
-    <TradingCard
-      name="Llambda"
-      skill="knitting scarves"
-      imgUrl="/static/img/llambda.jpg"
-    />
-  ),
-  document.querySelector('#llambda')
-);
+// ReactDOM.render(
+//   (
+//     <TradingCard
+//       name="Float"
+//       skill="baking pretzels"
+//       imgUrl="/static/img/float.jpg"
+//     />
+//   ),
+//   document.querySelector('#float')
+// );
 
-ReactDOM.render(
-  (
-    <TradingCard
-      name="Banana"
-      skill="slipping"
-      imgUrl="/static/img/merge.png"
-    />
-  ),
-  document.querySelector('#banana')
-);
+// ReactDOM.render(
+//   (
+//     <TradingCard
+//       name="Llambda"
+//       skill="knitting scarves"
+//       imgUrl="/static/img/llambda.jpg"
+//     />
+//   ),
+//   document.querySelector('#llambda')
+// );
 
-ReactDOM.render(
-  (
-    <TradingCard
-      name="Strawberry"
-      skill="writing books"
-      imgUrl="/static/img/polymorphism.jpeg"
-    />
-  ),
-  document.querySelector('#strawberry')
-);
+// ReactDOM.render(
+//   (
+//     <TradingCard
+//       name="Banana"
+//       skill="slipping"
+//       imgUrl="/static/img/merge.png"
+//     />
+//   ),
+//   document.querySelector('#banana')
+// );
+
+// ReactDOM.render(
+//   (
+//     <TradingCard
+//       name="Strawberry"
+//       skill="writing books"
+//       imgUrl="/static/img/polymorphism.jpeg"
+//     />
+//   ),
+//   document.querySelector('#strawberry')
+// );
 
